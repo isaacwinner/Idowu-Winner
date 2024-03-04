@@ -1,0 +1,143 @@
+ASSIGNMENT 1
+php
+<?php
+echo "Enter the first number: ";
+$number1 = readline();
+echo "Enter the second number: ";
+$number2 = readline();
+echo "Enter the third number: ";
+$number3 = readline();
+
+// Store the numbers in an array
+$numbers = [$number1, $number2, $number3];
+
+// Sort the array in ascending order
+sort($numbers);
+
+// Output the numbers in ascending order
+echo "The numbers in ascending order are: ";
+foreach ($numbers as $number) {
+    echo $number . " ";
+}
+?>
+
+ASSIGNMENT 2
+php
+function smallestIndex($array, $size) {
+    $smallestIndex = 0; // Assume the first element is the smallest
+    
+    for ($i = 1; $i < $size; $i++) {
+        if ($array[$i] < $array[$smallestIndex]) {
+            $smallestIndex = $i;
+        }
+    }
+    
+    return $smallestIndex;
+}
+
+program to test the smallestIndex function:
+
+php
+// Test the smallestIndex function
+$numbers = array(5, 2, 8, 1, 9);
+$size = count($numbers);
+
+$index = smallestIndex($numbers, $size);
+
+echo "The smallest element is at index: " . $index;
+
+
+ASSIGNMENT 3
+
+php
+<?php
+// user to input a string
+echo "Enter a string: ";
+$input = readline();
+
+// Convert the string to uppercase using a character array
+$length = strlen($input);
+$uppercased = [];
+for ($i = 0; $i < $length; $i++) {
+    $uppercased[] = strtoupper($input[$i]);
+}
+
+// Output the string in uppercase
+echo "The string in uppercase is: " . implode("", $uppercased);
+?>
+
+ASSIGNMENT 4
+
+php
+<?php
+// user to enter the size of the matrices
+echo "Enter the number of rows for the matrices: ";
+$rows = readline();
+
+echo "Enter the number of columns for the matrices: ";
+$columns = readline();
+
+// Create the first matrix
+echo "Enter the elements for the first matrix:\n";
+$matrix1 = [];
+for ($i = 0; $i < $rows; $i++) {
+    for ($j = 0; $j < $columns; $j++) {
+        echo "Enter element at position ($i, $j): ";
+        $matrix1[$i][$j] = readline();
+    }
+}
+
+// Create the second matrix
+echo "Enter the elements for the second matrix:\n";
+$matrix2 = [];
+for ($i = 0; $i < $rows; $i++) {
+    for ($j = 0; $j < $columns; $j++) {
+        echo "Enter element at position ($i, $j): ";
+        $matrix2[$i][$j] = readline();
+    }
+}
+
+// Compute the addition of the matrices
+$result = [];
+for ($i = 0; $i < $rows; $i++) {
+    for ($j = 0; $j < $columns; $j++) {
+        $result[$i][$j] = $matrix1[$i][$j] + $matrix2[$i][$j];
+    }
+}
+
+// Output the result
+echo "The addition of the matrices is:\n";
+for ($i = 0; $i < $rows; $i++) {
+    for ($j = 0; $j < $columns; $j++) {
+        echo $result[$i][$j] . " ";
+    }
+    echo "\n";
+}
+?>
+
+
+ASSIGNMENT 5
+php
+<?php
+// Declare the array
+$alpha = [];
+
+// Initialize the array
+for ($i = 0; $i < 50; $i++) {
+    if ($i < 25) {
+        $alpha[$i] = $i * $i;
+    } else {
+        $alpha[$i] = 3 * $i;
+    }
+}
+
+// Output the array
+for ($i = 0; $i < 50; $i++) {
+    echo $alpha[$i] . " ";
+
+    // Print 10 elements per line
+    if (($i + 1) % 10 === 0) {
+        echo "\n";
+    }
+}
+?>
